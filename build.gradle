@@ -1,0 +1,20 @@
+task createZip(type: Zip) {
+    from 'My-Pack/'
+    include '**/'
+    archiveName 'My-Pack.zip'
+    destinationDir(file('/build'))
+}
+
+task clean(type: Delete) {
+    delete '/build'
+}
+
+configure(createZip) {
+    group = 'my pack'
+    description = "Tasks specific to project."
+}
+
+configure(clean) {
+    group = 'my pack'
+    description = "Tasks specific to project."
+}
