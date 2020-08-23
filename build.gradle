@@ -7,6 +7,15 @@ task createZip(type: Zip) {
 
 task clean(type: Delete) {
     delete '/build'
+    delete 'C:\\Users\\Thoma\\Desktop\\Minecraft\\MultiMC\\instances\\1.16.2\\.minecraft\\resourcepacks\\My-Pack.zip'
+}
+
+
+task copyIntoGame() {
+    copy {
+        from '/build/My-Pack.zip'
+        into 'C:\\Users\\Thoma\\Desktop\\Minecraft\\MultiMC\\instances\\1.16.2\\.minecraft\\resourcepacks'
+    }
 }
 
 configure(createZip) {
@@ -15,6 +24,11 @@ configure(createZip) {
 }
 
 configure(clean) {
+    group = 'my pack'
+    description = "Tasks specific to project."
+}
+
+configure(copyIntoGame) {
     group = 'my pack'
     description = "Tasks specific to project."
 }
