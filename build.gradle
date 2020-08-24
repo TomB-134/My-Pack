@@ -7,14 +7,14 @@ task createZip(type: Zip) {
 
 task clean(type: Delete) {
     delete '/build'
-    delete 'C:\\Users\\Thoma\\Desktop\\Minecraft\\MultiMC\\instances\\1.16.2\\.minecraft\\resourcepacks\\My-Pack.zip'
+    delete 'C:\\Users\\Thoma\\Desktop\\Minecraft\\MultiMC\\instances\\1.16.1\\.minecraft\\resourcepacks\\My-Pack.zip'
 }
 
 
 task copyIntoGame() {
     copy {
         from '/build/My-Pack.zip'
-        into 'C:\\Users\\Thoma\\Desktop\\Minecraft\\MultiMC\\instances\\1.16.2\\.minecraft\\resourcepacks'
+        into 'C:\\Users\\Thoma\\Desktop\\Minecraft\\MultiMC\\instances\\1.16.1\\.minecraft\\resourcepacks'
     }
 }
 
